@@ -8,5 +8,5 @@ export async function createProduct({ name, amount }: IProduct) {
 
 export async function findAllProducts() {
   const products = await productsModel.findAllProducts();
-  return { type: 202, message: products };
+  return { type: 200, message: products };
 }
