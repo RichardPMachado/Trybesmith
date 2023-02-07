@@ -3,5 +3,5 @@ import * as productsModel from '../models/Products.model';
 
 export async function createProduct({ name, amount }: IProduct) {
   const product = await productsModel.insertProduct({ name, amount });
-  return { type: 201, message: product };
+  return { type: null, message: product };
 } 
