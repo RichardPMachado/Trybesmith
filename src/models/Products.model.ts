@@ -1,4 +1,6 @@
-import { RowDataPacket, ResultSetHeader } from 'mysql2';
+import { 
+  // RowDataPacket,
+  ResultSetHeader } from 'mysql2';
 
 import { IProduct } from '../interfaces';
 import connection from './connection';
