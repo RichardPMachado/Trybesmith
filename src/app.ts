@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/products', productsRouter);
-app.use('/users'. usersRouter);
+app.use('/users', usersRouter);
 
 app.get('/', (_req, res) => {
   res.status(200).send('Tudo certo!');
