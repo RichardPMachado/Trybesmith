@@ -15,3 +15,10 @@ export async function insertProduct(product: IProduct): Promise<IProduct> {
   const newProduct: IProduct = { id: insertId, name, amount };
   return newProduct;
 }
+
+export async function findAllProducts(): Promise<IProduct[]> {
+  const query = 'SELECT * FROM Trybesmith.products';
+  const [result] = await connection.execute(query);
+  const products = result as IProduct[];
+  return products;
+}
