@@ -20,7 +20,7 @@ const UsersSchema = Joi.object({
     'string.base': '"vocation" must be a string',
     'string.min': '"vocation" length must be at least 3 characters long',
   }),
-  level: Joi.number().greater(1).required()
+  level: Joi.number().greater(0).required()
     .messages({
       'number.base': '"level" must be a number',
       'number.greater': '"level" must be greater than or equal to 1',

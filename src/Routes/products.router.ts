@@ -6,7 +6,6 @@ const productsRouter = Router();
 
 productsRouter.get(
   '/',
-  productsMiddleware.validateProducts,
   (req, res) => ProductsController.getAllProducts(req, res),
 );
 productsRouter.post(

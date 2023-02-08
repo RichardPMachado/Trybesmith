@@ -6,7 +6,6 @@ const usersRouter = Router();
 
 usersRouter.get(
   '/',
-  userMiddleware.validateUsers,
   (req, res) => UsersController.getAllUsers(req, res),
 );
 usersRouter.post(
