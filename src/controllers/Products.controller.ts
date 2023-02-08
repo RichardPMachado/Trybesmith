@@ -9,5 +9,8 @@ export async function createProduct(req: Request, res: Response) {
 
 export async function getAllProducts(_req: Request, res: Response) {
   const { type, message } = await ProductsService.findAllProducts();
+  console.log(message);
+  
+  if (type) return res.status(type).json({ message });
   return res.status(type).json(message);
 }
