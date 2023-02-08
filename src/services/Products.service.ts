@@ -1,7 +1,10 @@
 import { IProduct } from '../interfaces';
 import * as ProductsModel from '../models/Products.model';
+import validateInputs from './validations/validateInputs';
 
 export async function createProduct({ name, amount }: IProduct) {
+  const { type, message } = validateInputs.createProductsValidation({ name, amount });
+  if (type) return { type, message };
   const product = await ProductsModel.insertProduct({ name, amount });
   return { type: 201, message: product };
 } 
