@@ -6,7 +6,7 @@ export interface IProduct {
 
 export interface IUser {
   id?: number;
-  userName: string;
+  username: string;
   vocation: string;
   level: number;
   password: string;

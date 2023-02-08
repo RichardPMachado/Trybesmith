@@ -2,9 +2,9 @@ import { Response, Request } from 'express';
 import * as UsersService from '../services/Users.service';
 
 export async function createUser(req: Request, res: Response) {
-  const { userName, vocation, level, password } = req.body;
-  const { type, message } = await UsersService.createUser({ userName, vocation, level, password });
-  return res.status(type).json(message);
+  const { username, vocation, level, password } = req.body;
+  const { type, message } = await UsersService.createUser({ username, vocation, level, password });
+  return res.status(type).json({ token: message });
 }
 
 export async function getAllUsers(_req: Request, res: Response) {

@@ -6,16 +6,17 @@ import { IUser } from '../interfaces';
 import connection from './connection';
 
 export async function insertUser(users: IUser): Promise<IUser> {
-  const { userName, vocation, level, password } = users;
+  const { username, vocation, level, password } = users;
 
   const query = `INSERT INTO Trybesmith.users
-    (userName, vocation, level, password) VALUES (?, ?. ?, ?)`;
-  const values = [userName, vocation, level, password];
+  (username, vocation, level, password) VALUES (?, ?, ?, ?)`;
+  const values = [username, vocation, level, password];
 
   const [result] = await connection.execute<ResultSetHeader>(query, values);
   const { insertId } = result;
 
-  const newUser: IUser = { id: insertId, userName, vocation, level, password };
+  const newUser: IUser = { id: insertId, username, vocation, level, password };
+  
   return newUser;
 }
 
