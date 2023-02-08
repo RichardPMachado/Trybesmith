@@ -5,13 +5,13 @@ import validateInputs from './validations/validateInputs';
 
 export async function findAllUsers() {
   const users = await UsersModel.findAllUsers();
+
   return { type: 200, message: users };
 }
 
 export async function createUser({ username, vocation, level, password }: IUser) {
   const { type, message } = validateInputs
     .createUsersValidation({ username, vocation, level, password });
-  console.log(message);
   
   if (type) return { type, message };
   const user = await UsersModel.insertUser({ username, vocation, level, password });
